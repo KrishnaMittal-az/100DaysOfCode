@@ -1,0 +1,39 @@
+# DAY 1
+#User function Template for python3
+
+class Solution:
+    def isDigitSumPalindrome(self, n):
+        #code here
+        x = 0
+        for i in str(n):
+            x += int(i)
+        ori = x
+        new = 0
+        # print(x)
+        for i in range(len(str(x))):
+            rem = x%10
+            new = new * 10 + rem
+            x = x//10
+        if(ori == new):
+            return 1
+        else:
+            return 0
+            
+# DAY 2
+#User function Template for python3
+import math
+class Solution:
+    def find_median(self, v):
+        # Code here
+        item = 0
+        l = len(v)
+        v.sort()
+#         print(v)
+        if (l % 2 != 0):
+            b = l//2
+            item = v[b]
+        else:
+            b1 = v[int(l/2)]
+            b2 = v[int((l/2)-1)]
+            item = (math.floor((b1+b2)/2))
+        return item
