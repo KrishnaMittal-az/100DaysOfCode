@@ -50,3 +50,10 @@ class Solution:
             return "Yes"
         else:
             return "No"
+# DAY 
+	def _sum(self,arr, n):
+   		# code here
+   		ans = 0
+   		for i in arr:
+   		    ans+=i
+   		return ans
