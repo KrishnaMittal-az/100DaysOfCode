@@ -120,4 +120,14 @@ class Solution {
     }
 
 }
+# DAY 8
+class Solution:
+    def twoSum(self,s,tar):
+        l=[]
+        for i in range(len(s)):
+            for j in range(i+1,len(s)):
+                if s[i]+s[j]==tar:
+                    return [i,j]
+        return []
+
 
