@@ -129,5 +129,12 @@ class Solution:
                 if s[i]+s[j]==tar:
                     return [i,j]
         return []
-
+# DAY 9
+class Solution(object):
+    def reverseWords(self, s):
+        s = s.split()
+        s = s[::-1]
+        s = tuple(s)
+        a = " ".join(s)   
+        return a
 
