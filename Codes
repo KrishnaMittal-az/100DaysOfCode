@@ -398,4 +398,85 @@ public:
         return true;
     }
 };
+# DAY 20
+import java.util.HashMap;
+import java.util.Collection;
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+		boolean flag = true;
+		HashMap<String, String>hm1 = new HashMap<String, String>();
+		for(int index = 0; index<s.length(); index++){
+			String strs =Character.toString(s.charAt(index));
+			String strt =Character.toString(t.charAt(index));
+			
+			if(hm1.containsKey(strs)) {
+				if(!hm1.get(strs).equals(strt)) {
+					flag = false;
+					break;
+				}
+			}else {
+				Collection <String> values = hm1.values();
+				if(values.contains(strt)) {
+					flag = false;
+					break;
+				}else {
+					hm1.put(strs, strt);
+				}
+			}
+		}
+		return  flag;
+	}
+}
+# DAY 21
+class Solution:
+    def sumOfTheDigitsOfHarshadNumber(self, x: int) -> int:
+        new = x
+        sum1 = 0
+        while(x>0):
+            rem = x%10
+            sum1 = sum1 + rem
+            x = x//10
+        if(new%sum1==0):
+            return sum1
+        else:
+            return -1
+
+# DAY 22
+class Solution:
+    def fizzBuzz(self, n: int) -> List[str]:
+        l = []
+        for i in range(1,n+1):
+            if(i%3==0 and i%5==0):
+                l.append("FizzBuzz")
+            elif(i%3==0):
+                l.append("Fizz")
+            elif(i%5==0):
+                l.append("Buzz")
+            else:
+                l.append(str(i))
+        return l
+# DAY 23
+class Solution {
+    public void sortColors(int[] arr) {
+        for (int i = 0 ; i < arr.length ; i++)
+        {
+            boolean swap = false;
+            for (int j = 1 ; j < arr.length - i ; j++)
+            {
+                if (arr[j] < arr[j - 1])
+                {
+                    int temp = arr[j];
+                    arr[j] = arr[j-1];
+                    arr[j-1] = temp;
+                    swap = true;
+                }
+            }
+            if(swap == false)
+            {
+                break;
+            }
+        }
+
+    }
+}
 
